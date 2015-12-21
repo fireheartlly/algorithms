@@ -17,6 +17,7 @@ public class NodeTest extends TestCase{
 		assertEquals(12,n1.next.value);
 		
 	}
+
 	public void testDoubleNode(){
 		DoublyNode n1=new DoublyNode();
 		n1.value=30;
@@ -41,4 +42,21 @@ public class NodeTest extends TestCase{
 		assertEquals(30,n3.prev.prev.value);
 		
 	}
+
+	public void testTreeNode()
+	{
+		TreeNode treeNodeCenter= new TreeNode();
+		treeNodeCenter.value=12;
+		TreeNode leftNode = new TreeNode();
+		leftNode.value=13;
+		TreeNode rightNode = new TreeNode();
+		rightNode.value=16;
+		treeNodeCenter.left=leftNode;
+		treeNodeCenter.right=rightNode;
+		
+		assertEquals(13, treeNodeCenter.left.value);
+		assertEquals(16, treeNodeCenter.right.value);
+	}
+
+
 }

@@ -9,6 +9,7 @@ public class StackTest extends TestCase{
 		assertEquals(10,teststack.lengthOfStack());
 	}
 	
+	//this test is for is empty
 	public void testIsEmpty(){
 		Stack teststack = new Stack(10);
 		assertTrue(teststack.isEmpty());

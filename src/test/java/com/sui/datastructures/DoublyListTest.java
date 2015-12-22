@@ -68,5 +68,6 @@ public class DoublyListTest extends TestCase{
 		}
 		
 		assertEquals(4, dll.getLength());
+		assertEquals(55,n2.next.value);
 	}
 }

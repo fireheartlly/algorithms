@@ -8,8 +8,12 @@ package com.sui.datastructures.nodes;
 public class DoublyNode extends Node {
 
 	//Stores pointer to next node
-	DoublyNode next;
+	public DoublyNode next;
 	
 	//Stores pointer to previous node
-	DoublyNode prev;
+	public DoublyNode prev;
+	
+	public DoublyNode(int num){
+		this.value=num;
+	}
 }

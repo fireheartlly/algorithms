@@ -8,5 +8,5 @@ package com.sui.datastructures.nodes;
 public class SinglyNode extends Node {
 
 	// Stores pointer to the next element of the link list
-	SinglyNode next;
+	public SinglyNode next;
 }

@@ -8,5 +8,5 @@ package com.sui.datastructures.nodes;
 public abstract class Node {
 
 	// Stores the value of the node
-	int value;
+	public int value;
 }

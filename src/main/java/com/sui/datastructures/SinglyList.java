@@ -6,133 +6,101 @@ public class SinglyList {
 	SinglyNode singlyNode;
 	SinglyNode head;
 	SinglyNode tail;
-	int length=0;
-	
+	int length = 0;
+
 	public void addinHead(SinglyNode singlyNode) {
-		if(head==null && tail==null)
-		{
-			head=singlyNode;
-			tail=singlyNode;
+		if (head == null && tail == null) {
+			head = singlyNode;
+			tail = singlyNode;
+			length++;
+		} else {
+			singlyNode.next = head;
+			head = singlyNode;
 			length++;
 		}
-		else
-		{   
-		    singlyNode.next=head;
-			head=singlyNode;
-			length++;
-		}
-		
-		
+
 	}
 
-	public void addinTail(SinglyNode singlyNodeTail) 
-	{
-		if(tail==null && head==null)
-		{
-			
-			tail=singlyNodeTail;
-			head=singlyNodeTail;
+	public void addinTail(SinglyNode singlyNodeTail) {
+		if (tail == null && head == null) {
+
+			tail = singlyNodeTail;
+			head = singlyNodeTail;
 			length++;
-			
-		}
-		else
-		{
-			tail.next=singlyNodeTail;
-			tail=singlyNodeTail;
+
+		} else {
+			tail.next = singlyNodeTail;
+			tail = singlyNodeTail;
 			length++;
 		}
-		
-		
-		
+
 	}
-	public int  getLength()
-	{
+
+	public int getLength() {
 		return length;
 	}
 
-	public int getFirst() throws Exception{
-		if(head!=null )
-		{
+	public int getFirst() throws Exception {
+		if (head != null) {
 			return head.value;
-		}
-		else
-		{
+		} else {
 			throw new Exception("List is empty");
-			
+
 		}
-		
-		
+
 	}
 
-	public int getLast() throws Exception
-	{
-		if(tail!=null)
-		{
+	public int getLast() throws Exception {
+		if (tail != null) {
 			return tail.value;
-		}
-		else
-		{
+		} else {
 			throw new Exception("List is empty");
 		}
-		
+
 	}
 
 	public int removeLast() throws Exception {
-		if(tail !=null)
-		{
+		if (tail != null) {
 			SinglyNode temp;
-			int i=1;
+			int i = 1;
 			temp = head;
-			while(i<=length-1)
-			{	if(head!=null)
-				
+			while (i <= length - 1) {
+				if (head != null)
+
 				{
-				
-				temp = temp.next;
-				i++;
-				
-					
+
+					temp = temp.next;
+					i++;
+
+				} else {
+
+					throw new Exception("List is empty");
+
 				}
-			else
-			{
-				
-				throw new Exception("List is empty");
-				
+
 			}
-				
-				
-				
-			}
-			tail=new SinglyNode();
-			tail=temp;
-			
-		}
-		else
-		{
+			tail = new SinglyNode();
+			tail = temp;
+
+		} else {
 			throw new Exception("List is empty");
 		}
 		return tail.value;
-		
+
 	}
 
-	public int removeFirst() throws Exception 
-	{
-		if(head !=null)
-		{	
+	public int removeFirst() throws Exception {
+		if (head != null) {
 			int first = head.value;
 			SinglyNode singlyNode = head.next;
 			head = new SinglyNode();
 			head = singlyNode;
 			return first;
-			
-			
-		}
-		else
-		{
+
+		} else {
 			throw new Exception("List is empty");
 		}
-		
-		
+
 	}
 
 }

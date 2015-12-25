@@ -45,12 +45,10 @@ public class Queue {
 		} else {
 			return false;
 		}
-
 	}
 
 	/**
 	 * This method is used to add the num to the queue;
-	 * 
 	 * @param num
 	 * @throws Exception
 	 */

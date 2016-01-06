@@ -5,31 +5,31 @@ import junit.framework.TestCase;
 public class StackTest extends TestCase{
 
 	public void testStackContructor(){
-		Stack teststack = new Stack(10);
+		StaticStack teststack = new StaticStack(10);
 		assertEquals(10,teststack.lengthOfStack());
 	}
 	
 	//this test is for is empty
 	public void testIsEmpty(){
-		Stack teststack = new Stack(10);
+		StaticStack teststack = new StaticStack(10);
 		assertTrue(teststack.isEmpty());
 	}
 	public void testPush() throws Exception{
-		Stack teststack = new Stack(10);
+		StaticStack teststack = new StaticStack(10);
 		teststack.push(10);
 		teststack.push(11);
 		assertFalse(teststack.isEmpty());
 	}
 	
 	public void testPop() throws Exception{
-		Stack teststack = new Stack(10);
+		StaticStack teststack = new StaticStack(10);
 		teststack.push(10);
 		teststack.push(11);
 		assertEquals(11,teststack.pop());
 	}
 	
 	public void testPeek() throws Exception{
-		Stack teststack = new Stack(10);
+		StaticStack teststack = new StaticStack(10);
 		teststack.push(10);
 		teststack.push(11);
 		teststack.pop();
@@ -37,7 +37,7 @@ public class StackTest extends TestCase{
 	}
 	
 	public void testIsFull() throws Exception{
-		Stack teststack = new Stack(5);
+		StaticStack teststack = new StaticStack(5);
 		teststack.push(10);
 		teststack.push(11);
 		teststack.push(12);

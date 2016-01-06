@@ -6,7 +6,7 @@ package com.sui.datastructures;
  * @author heary
  *
  */
-public class Queue {
+public class StaticQueue {
 
 	int arr[];/* arr used to store array for the queue */
 	int front = -1; // used to return current position of the front;
@@ -19,7 +19,7 @@ public class Queue {
 	 * @param lengthOfQueue
 	 *            length of queue has been initialized;
 	 */
-	public Queue(int lengthOfQueue) {
+	public StaticQueue(int lengthOfQueue) {
 		arr = new int[lengthOfQueue];
 		len = lengthOfQueue;
 

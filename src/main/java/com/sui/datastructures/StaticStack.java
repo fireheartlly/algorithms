@@ -4,7 +4,7 @@ package com.sui.datastructures;
  * @author heary
  *
  */
-public class Stack {
+public class StaticStack {
 	
 	int[] arr;/* arr varibale to store the array for the stack */
 	
@@ -16,7 +16,7 @@ public class Stack {
 	 * This constructor is used to initialize stack with given stack size
 	 * @param lengthOfStack	length of stack that has to be initialized
 	 */
-	public Stack(int lengthOfStack){
+	public StaticStack(int lengthOfStack){
 		arr = new int[lengthOfStack];
 		len = lengthOfStack;
 	}

@@ -65,38 +65,22 @@ public class SinglyList<Itemtype> {
 			int i = 1;
 			temp = head;
 			while (i <= length - 1) {
-				if (head != null)
-
-				{
-
 					temp = temp.next;
 					i++;
-
-				} else {
-
-					throw new Exception("List is empty");
-
-				}
-
 			}
-			tail = new SinglyNode<Itemtype>();
+			Itemtype val = tail.value;
 			tail = temp;
-
+			return val;
 		} else {
 			throw new Exception("List is empty");
 		}
-		return tail.value;
-
 	}
 
 	public Itemtype removeFirst() throws Exception {
 		if (head != null) {
 			Itemtype first = head.value;
-			SinglyNode<Itemtype> singlyNode = head.next;
-			head = new SinglyNode<Itemtype>();
-			head = singlyNode;
+			head = head.next;
 			return first;
-
 		} else {
 			throw new Exception("List is empty");
 		}

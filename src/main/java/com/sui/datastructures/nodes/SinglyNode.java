@@ -9,4 +9,7 @@ public class SinglyNode<Itemtype> extends Node<Itemtype> {
 
 	// Stores pointer to the next element of the link list
 	public SinglyNode<Itemtype> next;
+	public SinglyNode(Itemtype value) {
+		this.value = value;
+	}
 }

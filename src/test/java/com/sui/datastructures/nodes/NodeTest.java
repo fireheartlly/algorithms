@@ -5,16 +5,16 @@ import junit.framework.TestCase;
 public class NodeTest extends TestCase{
 
 	public void testSinglyNode(){
-		SinglyNode n1 = new SinglyNode();
-		n1.value = 10;
-		SinglyNode n2 = new SinglyNode();
-		n2.value = 12;
+		SinglyNode<Integer> n1 = new SinglyNode<Integer>(10);
+		//n1.value = 10;
+		SinglyNode<Integer> n2 = new SinglyNode<Integer>(12);
+		//n2.value = 12;
 		n1.next = n2;
 		
 		assertNotNull(n1.next);
 		assertNull(n2.next);
-		assertEquals(10,n1.value);
-		assertEquals(12,n1.next.value);
+		assertEquals(10,(int)n1.value);
+		assertEquals(12,(int)n1.next.value);
 		
 	}
 

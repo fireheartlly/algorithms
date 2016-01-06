@@ -8,16 +8,16 @@ public class SinglyListTest extends TestCase {
 	
 	public void testAddNodeinHead()
 	{	
-		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>();
-	    singlyNode.value = 10;
+		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>(10);
+	    //singlyNode.value = 10;
 	    SinglyList<Integer> siglyList = new SinglyList<Integer>();
 		siglyList.addinHead(singlyNode);
 		assertEquals((int)siglyList.head.value, 10);
 	}
 	public void testAddinTail()
 	{
-		SinglyNode<Integer> singlyNodeTail = new SinglyNode<Integer>();
-		singlyNodeTail.value=10;
+		SinglyNode<Integer> singlyNodeTail = new SinglyNode<Integer>(10);
+		//singlyNodeTail.value=10;
 		SinglyList<Integer> singlyList = new SinglyList<Integer>();
 		singlyList.addinTail(singlyNodeTail);
 		assertEquals(10,(int)singlyList.tail.value);
@@ -25,12 +25,12 @@ public class SinglyListTest extends TestCase {
 	}
 	public void testGetSize()
 	{
-		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>();
-	    singlyNode.value = 10;
+		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>(10);
+	    //singlyNode.value = 10;
 	    SinglyList<Integer> siglyList = new SinglyList<Integer>();
 		siglyList.addinHead(singlyNode);
-		SinglyNode<Integer> singlyNodeTail = new SinglyNode<Integer>();
-		singlyNodeTail.value=10;
+		SinglyNode<Integer> singlyNodeTail = new SinglyNode<Integer>(10);
+		//singlyNodeTail.value=10;
 		siglyList.addinTail(singlyNodeTail);
 		assertEquals(siglyList.getLength(), 2);
 		
@@ -38,8 +38,8 @@ public class SinglyListTest extends TestCase {
 	public void testGetFirst() 
 	{
 		SinglyList<Integer> singlyList = new SinglyList<Integer>();
-		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>();
-		singlyNode.value=12;
+		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>(12);
+		//singlyNode.value=12;
 		singlyList.addinHead(singlyNode);
 		try
 		{
@@ -55,8 +55,8 @@ public class SinglyListTest extends TestCase {
 	}
 	public void testGetLast()
 	{
-		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>();
-		singlyNode.value=12;
+		SinglyNode<Integer> singlyNode= new SinglyNode<Integer>(12);
+		//singlyNode.value=12;
 		SinglyList<Integer> singlyList = new SinglyList<Integer>();
 		singlyList.addinTail(singlyNode);
 		try{
@@ -73,11 +73,11 @@ public class SinglyListTest extends TestCase {
 	{
 		SinglyList<Integer> singlyList = new SinglyList<Integer>();
 		try
-		{	SinglyNode<Integer> singlyNode= new SinglyNode<Integer>();
-		    singlyNode.value=12;
+		{	SinglyNode<Integer> singlyNode= new SinglyNode<Integer>(12);
+		   // singlyNode.value=12;
 		    singlyList.addinHead(singlyNode);
-		    SinglyNode<Integer> singlyNode1 = new SinglyNode<Integer>();
-		    singlyNode1.value=13;
+		    SinglyNode<Integer> singlyNode1 = new SinglyNode<Integer>(13);
+		    //singlyNode1.value=13;
 		    singlyList.addinTail(singlyNode1);
 			int lastNode=singlyList.removeLast();
 			assertEquals(lastNode, 13);
@@ -93,11 +93,11 @@ public class SinglyListTest extends TestCase {
 	{
 		SinglyList<Integer> singlyList = new SinglyList<Integer>();
 		try
-		{	SinglyNode<Integer> singlyNode= new SinglyNode<Integer>();
-		    singlyNode.value=12;
+		{	SinglyNode<Integer> singlyNode= new SinglyNode<Integer>(12);
+		    //singlyNode.value=12;
 		    singlyList.addinHead(singlyNode);
-		    SinglyNode<Integer> singlyNode1=new SinglyNode<Integer>();
-		    singlyNode1.value=13;
+		    SinglyNode<Integer> singlyNode1=new SinglyNode<Integer>(13);
+		    //singlyNode1.value=13;
 		    assertEquals((int)singlyList.getFirst(), 12); 
 		    
 		    singlyList.addinTail(singlyNode1);

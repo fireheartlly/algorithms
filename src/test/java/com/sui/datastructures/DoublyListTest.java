@@ -7,56 +7,56 @@ import junit.framework.TestCase;
 public class DoublyListTest extends TestCase{
 	
 	public void  testDoublyCreated(){
-		DoublyLinkList dll=new DoublyLinkList();
-		assertEquals(0,dll.getLength());
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		assertEquals(0,(int)dll.getLength());
 	}
 	
 	public void testPeek(){
-		DoublyLinkList dll=new DoublyLinkList();
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
 		try{
-			assertEquals(50,dll.peek());	
+			assertEquals(50,(int)dll.peek());	
 		}
 		catch(NullPointerException e){}
-		DoublyNode n1=new DoublyNode(50);
+		DoublyNode<Integer> n1=new DoublyNode<Integer>(50);
 		dll.addToHead(n1);
-		DoublyNode n2=new DoublyNode(51);
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(51);
 		dll.addToHead(n2);
-		assertEquals(51,dll.peek());
+		assertEquals(51,(int)dll.peek());
 	}
 	
 	
 	public void testAddtoHead(){
-		DoublyLinkList dll=new DoublyLinkList();
-		DoublyNode n1=new DoublyNode(15);
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		DoublyNode<Integer> n1=new DoublyNode<Integer>(15);
 		dll.addToHead(n1);
-		DoublyNode n2=new DoublyNode(60);
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(60);
 		dll.addToHead(n2);
-		assertEquals(2,dll.getLength());
-		assertEquals(60,dll.peek());
-		assertEquals(15,dll.rear());
+		assertEquals(2,(int)dll.getLength());
+		assertEquals(60,(int)dll.peek());
+		assertEquals(15,(int)dll.rear());
 	}
 	
 	public void testAddtoTail(){
-		DoublyLinkList dll=new DoublyLinkList();
-		DoublyNode n3=new DoublyNode(35);
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		DoublyNode<Integer> n3=new DoublyNode<Integer>(35);
 		dll.addToTail(n3);
-		assertEquals(1,dll.getLength());
-		DoublyNode n2=new DoublyNode(80);
+		assertEquals(1,(int)dll.getLength());
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(80);
 		dll.addToTail(n2);
-		assertEquals(2,dll.getLength());
-		assertEquals(35,dll.peek());
-		assertEquals(80,dll.rear());
+		assertEquals(2,(int)dll.getLength());
+		assertEquals(35,(int)dll.peek());
+		assertEquals(80,(int)dll.rear());
 	}
 	
 	public void testInsert(){
-		DoublyLinkList dll=new DoublyLinkList();
-		DoublyNode n1=new DoublyNode(25);
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		DoublyNode<Integer> n1=new DoublyNode<Integer>(25);
 		dll.addToHead(n1);
-		DoublyNode n2=new DoublyNode(35);
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(35);
 		dll.addToTail(n2);
-		DoublyNode n3=new DoublyNode(45);
+		DoublyNode<Integer> n3=new DoublyNode<Integer>(45);
 		dll.addToTail(n3);	
-		DoublyNode newnode=new DoublyNode(55);
+		DoublyNode<Integer> newnode=new DoublyNode<Integer>(55);
 		try {
 			dll.insert(newnode,2);
 			dll.insert(newnode,4);
@@ -65,49 +65,49 @@ public class DoublyListTest extends TestCase{
 		}
 		
 		assertEquals(4, dll.getLength());
-		assertEquals(55,n2.next.value);
+		assertEquals(55,(int)n2.next.value);
 	}
 	
 	public void testcount(){
-		DoublyLinkList dll=new DoublyLinkList();
-		DoublyNode n1=new DoublyNode(44);
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		DoublyNode<Integer> n1=new DoublyNode<Integer>(44);
 		dll.addToTail(n1);
-		DoublyNode n2=new DoublyNode(45);
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(45);
 		dll.addToTail(n2);
-		DoublyNode n3=new DoublyNode(50);
+		DoublyNode<Integer> n3=new DoublyNode<Integer>(50);
 		dll.addToTail(n3);
-		assertEquals(3,dll.countNode());
+		assertEquals(3,(int)dll.countNode());
 	}
 	
 	
 	public void testDeleteNode() throws Exception{
-		DoublyLinkList dll=new DoublyLinkList();
-		DoublyNode n1=new DoublyNode(33);
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		DoublyNode<Integer> n1=new DoublyNode<Integer>(33);
 		dll.addToTail(n1);
-		DoublyNode n2=new DoublyNode(34);
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(34);
 		dll.addToTail(n2);
-		DoublyNode n3=new DoublyNode(35);
+		DoublyNode<Integer> n3=new DoublyNode<Integer>(35);
 		dll.addToTail(n3);
-		DoublyNode n4=new DoublyNode(36);
+		DoublyNode<Integer> n4=new DoublyNode<Integer>(36);
 		dll.addToTail(n4);
 		dll.deleteHead();
-		assertEquals(3,dll.countNode());
-		assertEquals(34,dll.peek());
+		assertEquals(3,(int)dll.countNode());
+		assertEquals(34,(int)dll.peek());
 		
 		//dll.printList();
 		dll.deleteTail();
 		//dll.printList();
-		assertEquals(2,dll.countNode());
-		assertEquals(35,dll.rear());
-		DoublyNode n8=new DoublyNode(66);
+		assertEquals(2,(int)dll.countNode());
+		assertEquals(35,(int)dll.rear());
+		DoublyNode<Integer> n8=new DoublyNode<Integer>(66);
 		dll.addToTail(n8);
 		try{
 	//	dll.printList();
 		dll.deletePos(1);
 	//	dll.printList();
-		assertEquals(34,dll.get(0));
-		assertEquals(66,dll.get(1));
-		assertEquals(2,dll.countNode());
+		assertEquals(34,(int)dll.get(0));
+		assertEquals(66,(int)dll.get(1));
+		assertEquals(2,(int)dll.countNode());
 		
 		}
 		catch(Exception e){}
@@ -115,32 +115,32 @@ public class DoublyListTest extends TestCase{
 	}
 	
 	public void testGetvalueInPosition() throws Exception{
-		DoublyLinkList dll=new DoublyLinkList();
-		DoublyNode n1=new DoublyNode(66);
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		DoublyNode<Integer> n1=new DoublyNode<Integer>(66);
 		dll.addToTail(n1);
-		DoublyNode n2=new DoublyNode(80);
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(80);
 		dll.addToTail(n2);
-		DoublyNode n3=new DoublyNode(85);
+		DoublyNode<Integer> n3=new DoublyNode<Integer>(85);
 		dll.addToTail(n3);
-		assertEquals(85,dll.get(2));
-		assertEquals(66,dll.get(0));
-		assertEquals(80,dll.get(1));
+		assertEquals(85,(int)dll.get(2));
+		assertEquals(66,(int)dll.get(0));
+		assertEquals(80,(int)dll.get(1));
 	}
 	
 	public void testSearchValue() throws Exception{
-		DoublyLinkList dll=new DoublyLinkList();
-		DoublyNode n1=new DoublyNode(66);
+		DoublyLinkList<Integer> dll=new DoublyLinkList<Integer>();
+		DoublyNode<Integer> n1=new DoublyNode<Integer>(66);
 		dll.addToTail(n1);
-		DoublyNode n2=new DoublyNode(80);
+		DoublyNode<Integer> n2=new DoublyNode<Integer>(80);
 		dll.addToTail(n2);
-		DoublyNode n3=new DoublyNode(85);
+		DoublyNode<Integer> n3=new DoublyNode<Integer>(85);
 		dll.addToTail(n3);
-		DoublyNode n4=new DoublyNode(90);
+		DoublyNode<Integer> n4=new DoublyNode<Integer>(90);
 		dll.addToTail(n4);
-		assertEquals(2,dll.searchValue(85));
+		assertEquals(2,(int)dll.searchValue(85));
 		
 		try{
-			assertEquals(0,dll.searchValue(100));
+			assertEquals(0,(int)dll.searchValue(100));
 		}
 		catch(Exception e){}
 		

@@ -5,8 +5,8 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public abstract class Node {
+public abstract class Node<ItemType> {
 
 	// Stores the value of the node
-	public int value;
+	public ItemType value;
 }

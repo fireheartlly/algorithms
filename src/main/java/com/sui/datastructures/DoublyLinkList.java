@@ -8,9 +8,9 @@ import com.sui.datastructures.nodes.DoublyNode;
  * @author Chunxia sui
  *
  */
-public class DoublyLinkList {
-	private DoublyNode head = null;
-	private DoublyNode tail = null;
+public class DoublyLinkList<ItemType> {
+	private DoublyNode<ItemType> head = null;
+	private DoublyNode<ItemType> tail = null;
 	private int length = 0;
 
 	/**
@@ -18,7 +18,7 @@ public class DoublyLinkList {
 	 * 
 	 * @return
 	 */
-	public int peek() {
+	public ItemType peek() {
 		return head.value;
 	}
 
@@ -27,7 +27,7 @@ public class DoublyLinkList {
 	 * 
 	 * @return
 	 */
-	public int rear() {
+	public ItemType rear() {
 		return tail.value;
 	}
 
@@ -37,7 +37,7 @@ public class DoublyLinkList {
 	 * @param node
 	 *            node to be added
 	 */
-	public void addToHead(DoublyNode node) {
+	public void addToHead(DoublyNode<ItemType> node) {
 		if (head == null && tail == null) {
 			head = node;
 			tail = node;
@@ -55,7 +55,7 @@ public class DoublyLinkList {
 	 * @param node1
 	 *            node to be added
 	 */
-	public void addToTail(DoublyNode node1) {
+	public void addToTail(DoublyNode<ItemType> node1) {
 		if (head == null && tail == null) {
 			head = node1;
 			tail = node1;
@@ -76,9 +76,9 @@ public class DoublyLinkList {
 	 *            position of the node to be added
 	 * @throws Exception
 	 */
-	public void insert(DoublyNode newNode, int pos) throws Exception {
+	public void insert(DoublyNode<ItemType> newNode, int pos) throws Exception {
 		if (pos < getLength()) {
-			DoublyNode p = head;
+			DoublyNode<ItemType> p = head;
 			int temp = 0;
 			for (temp = 0; temp < pos - 1; temp++) {
 				p = p.next;
@@ -109,7 +109,7 @@ public class DoublyLinkList {
 	 */
 
 	public int countNode() {
-		DoublyNode p = head;
+		DoublyNode<ItemType> p = head;
 		int count = 0;
 		while (p != null) {
 			count++;
@@ -124,7 +124,7 @@ public class DoublyLinkList {
 	 * @throws Exception
 	 */
 	public void deleteHead() throws Exception {
-		DoublyNode p1;
+		DoublyNode<ItemType> p1;
 
 		if (head == null && tail == null) {
 			throw new Exception("can't delete");
@@ -145,7 +145,7 @@ public class DoublyLinkList {
 		if (head == null && tail == null) {
 			throw new Exception("can't delete");
 		} else {
-			DoublyNode q = tail.prev;
+			DoublyNode<ItemType> q = tail.prev;
 			q.next = null;
 			tail = q;
 			length--;
@@ -157,7 +157,7 @@ public class DoublyLinkList {
 	 * Method to print all node in the Doublylist.
 	 */
 	public void printList() {
-		DoublyNode p1 = head;
+		DoublyNode<ItemType> p1 = head;
 		while (p1 != null) {
 			System.out.print(p1.value + "->");
 			p1 = p1.next;
@@ -177,11 +177,11 @@ public class DoublyLinkList {
 		} else {
 			if (pos < getLength()) {
 				int temp = 0;
-				DoublyNode q = head;
+				DoublyNode<ItemType> q = head;
 				for (temp = 0; temp < pos - 1; temp++) {
 					q = q.next;
 				}
-				DoublyNode s = q.next.next;
+				DoublyNode<ItemType> s = q.next.next;
 				q.next = s;
 				s.prev = q;
 
@@ -202,9 +202,9 @@ public class DoublyLinkList {
 	 * @return the value in the given position
 	 * @throws Exception
 	 */
-	public int get(int pos) throws Exception {
+	public ItemType get(int pos) throws Exception {
 		if (pos < getLength()) {
-			DoublyNode p = head;
+			DoublyNode<ItemType> p = head;
 			for (int temp = 0; temp < pos; temp++) {
 				p = p.next;
 			}
@@ -223,8 +223,8 @@ public class DoublyLinkList {
 	 * @throws Exception
 	 *             exception thrown when value doesnot exist in list
 	 */
-	public int searchValue(int num) throws Exception {
-		DoublyNode p = head;
+	public int searchValue(ItemType num) throws Exception {
+		DoublyNode<ItemType> p = head;
 		for (int i = 0; i < getLength(); i++) {
 			if (p.value == num) {
 				return i;

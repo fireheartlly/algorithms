@@ -5,15 +5,15 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public class DoublyNode extends Node {
+public class DoublyNode<ItemType> extends Node<ItemType> {
 
 	//Stores pointer to next node
-	public DoublyNode next;
+	public DoublyNode<ItemType> next;
 	
 	//Stores pointer to previous node
-	public DoublyNode prev;
+	public DoublyNode<ItemType> prev;
 	
-	public DoublyNode(int num){
+	public DoublyNode(ItemType num){
 		this.value=num;
 	}
 }

@@ -5,8 +5,8 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public class SinglyNode extends Node {
+public class SinglyNode<Itemtype> extends Node<Itemtype> {
 
 	// Stores pointer to the next element of the link list
-	public SinglyNode next;
+	public SinglyNode<Itemtype> next;
 }

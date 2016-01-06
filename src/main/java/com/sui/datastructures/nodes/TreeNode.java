@@ -5,11 +5,11 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public class TreeNode extends Node{
+public class TreeNode<ItemType> extends Node<ItemType>{
 	
 	//Stores pointer to left child
-	TreeNode left;
+	TreeNode<ItemType> left;
 	
 	//Stores pointer to right child
-	TreeNode right;
+	TreeNode<ItemType> right;
 }

@@ -8,7 +8,7 @@ public class SinglyList<Itemtype> {
 	SinglyNode<Itemtype> tail;
 	int length = 0;
 
-	public void addinHead(SinglyNode<Itemtype> singlyNode) {
+	public void addInHead(SinglyNode<Itemtype> singlyNode) {
 		if (head == null && tail == null) {
 			head = singlyNode;
 			tail = singlyNode;
@@ -21,7 +21,12 @@ public class SinglyList<Itemtype> {
 
 	}
 
-	public void addinTail(SinglyNode<Itemtype> singlyNodeTail) {
+	public void addInHead(Itemtype item){
+		SinglyNode<Itemtype> node = new SinglyNode<Itemtype>(item);
+		addInHead(node);
+	}
+	
+	public void addInTail(SinglyNode<Itemtype> singlyNodeTail) {
 		if (tail == null && head == null) {
 
 			tail = singlyNodeTail;
@@ -36,6 +41,11 @@ public class SinglyList<Itemtype> {
 
 	}
 
+	public void addInTail(Itemtype item){
+		SinglyNode<Itemtype> node = new SinglyNode<Itemtype>(item);
+		addInTail(node);
+	}
+	
 	public int getLength() {
 		return length;
 	}
@@ -86,6 +96,14 @@ public class SinglyList<Itemtype> {
 			throw new Exception("List is empty");
 		}
 
+	}
+
+	public Itemtype peek() {
+		return head.value;
+	}
+
+	public Itemtype tailpeek() {
+		return tail.value;
 	}
 
 }

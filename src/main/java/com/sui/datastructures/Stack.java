@@ -33,7 +33,7 @@ public class Stack<ItemType> {
 	 */
 	public void push(ItemType itemType) {
 		SinglyNode<ItemType> singlyNode = new SinglyNode<ItemType>(itemType);
-		singlyList.addinHead(singlyNode);
+		singlyList.addInHead(singlyNode);
 
 	}
 	

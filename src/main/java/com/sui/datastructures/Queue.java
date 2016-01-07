@@ -35,7 +35,7 @@ public class Queue<ItemType> {
 	public void enQueue(ItemType itemType)
 	{
 		SinglyNode<ItemType> singlyNode = new SinglyNode<ItemType>(itemType);
-		singlyList.addinTail(singlyNode);
+		singlyList.addInTail(singlyNode);
 		
 		
 	}

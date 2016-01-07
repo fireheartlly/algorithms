@@ -139,7 +139,7 @@ public class CircularList<Itemtype> {
 	 * Method to get the tail value of the list
 	 * @return
 	 */
-	public Itemtype rpeek() {
+	public Itemtype tailpeek() {
 		return tail.value;
 	}
 

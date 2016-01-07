@@ -70,7 +70,7 @@ public class CircularListTest extends TestCase {
 
 	public void testrPeek() {
 		CircularList<String> list = getANewList();
-		assertEquals("Node1", (String) list.rpeek());
+		assertEquals("Node1", (String) list.tailpeek());
 	}
 
 	public void testSearchValue() {

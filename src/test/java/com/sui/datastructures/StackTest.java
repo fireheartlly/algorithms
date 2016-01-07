@@ -1,7 +1,5 @@
 package com.sui.datastructures;
 
-import com.sui.datastructures.nodes.SinglyNode;
-
 import junit.framework.TestCase;
 
 public class StackTest extends TestCase

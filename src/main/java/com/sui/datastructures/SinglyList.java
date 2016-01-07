@@ -120,6 +120,9 @@ public class SinglyList<Itemtype> {
 		this.tail = tail;
 	}
 
+	public void increaseLength(int len){
+		length+=len;
+	}
 	@Override
 	public String toString() {
 		int tempcount = 0;

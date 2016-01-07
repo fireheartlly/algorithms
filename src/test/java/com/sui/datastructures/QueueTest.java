@@ -2,38 +2,35 @@ package com.sui.datastructures;
 
 import junit.framework.TestCase;
 
-public class QueueTest extends TestCase{
+public class QueueTest extends TestCase 
+{
+	public void testIsEmpty()
+	{
+		Queue<Integer> queue = new Queue<Integer>();
+		 assertEquals(true,queue.isEmpty()); 
+	}
 	
-	public void testQueueConstructor(){
-		StaticQueue testqueue=new StaticQueue(20);
-		assertEquals(20,testqueue.lengthOfQueue());
+	public void testEnQueue()
+	{
+		Queue<Integer> queue =new Queue<Integer>();
+		queue.enQueue(new Integer(12));
+		assertEquals(false,queue.isEmpty());
+		assertEquals(new Integer(1),queue.getSize());
 		
 	}
 	
-	public void testQueueIsempty(){
-		StaticQueue testqueue=new StaticQueue(20);
-		assertTrue(testqueue.queueIsempty());
+	public void testdeQueue()
+	{
+		Queue<Integer> queue = new Queue<Integer>();
+		queue.enQueue(12);
+		queue.enQueue(13);
+		try {
+			assertEquals((Integer)queue.deQueue(),new Integer(12));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.getMessage();
+		}
 	}
 	
-	public void testEnqueue() throws Exception{
-		StaticQueue testqueue=new StaticQueue(20);
-		testqueue.enQueue(10);
-		testqueue.enQueue(15);
-		testqueue.enQueue(30);
-		assertFalse(testqueue.queueIsempty());
-	}
-	public void testQueueIsfull(){
-		StaticQueue testqueue=new StaticQueue(20);
-		assertFalse(testqueue.queueIsfull());
-	}
-	public void testDequeue() throws Exception{
-		StaticQueue testqueue=new StaticQueue(20);
-		testqueue.enQueue(3);
-		testqueue.enQueue(5);
-		assertEquals(3,testqueue.deQueue());
-		
-	}
-	
-	
-	
+
 }

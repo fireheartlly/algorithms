@@ -70,6 +70,7 @@ public class SinglyList<Itemtype> {
 			}
 			Itemtype val = tail.value;
 			tail = temp;
+			length--;
 			return val;
 		} else {
 			throw new Exception("List is empty");

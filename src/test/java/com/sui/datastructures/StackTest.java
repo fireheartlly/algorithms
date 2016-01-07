@@ -1,49 +1,65 @@
 package com.sui.datastructures;
 
+import com.sui.datastructures.nodes.SinglyNode;
+
 import junit.framework.TestCase;
 
-public class StackTest extends TestCase{
-
-	public void testStackContructor(){
-		StaticStack teststack = new StaticStack(10);
-		assertEquals(10,teststack.lengthOfStack());
-	}
+public class StackTest extends TestCase
+{
 	
-	//this test is for is empty
-	public void testIsEmpty(){
-		StaticStack teststack = new StaticStack(10);
-		assertTrue(teststack.isEmpty());
+	public void testisEmpty()
+	{
+		Stack<String> stack = new Stack<String>();
+		assertEquals(true, stack.isEmpty());
 	}
-	public void testPush() throws Exception{
-		StaticStack teststack = new StaticStack(10);
-		teststack.push(10);
-		teststack.push(11);
-		assertFalse(teststack.isEmpty());
-	}
-	
-	public void testPop() throws Exception{
-		StaticStack teststack = new StaticStack(10);
-		teststack.push(10);
-		teststack.push(11);
-		assertEquals(11,teststack.pop());
-	}
-	
-	public void testPeek() throws Exception{
-		StaticStack teststack = new StaticStack(10);
-		teststack.push(10);
-		teststack.push(11);
-		teststack.pop();
-		assertEquals(10,teststack.peek());
-	}
-	
-	public void testIsFull() throws Exception{
-		StaticStack teststack = new StaticStack(5);
-		teststack.push(10);
-		teststack.push(11);
-		teststack.push(12);
-		teststack.push(13);
-		teststack.push(14);
-		assertTrue(teststack.isFull());
+	public void testPush()
+	{
+		Stack<Integer> stack = new Stack<Integer>();
+		stack.push(12);
+		assertEquals(false, stack.isEmpty());
 		
 	}
+	public void testPull()
+	{
+		Stack<Integer> stack = new Stack<Integer>();
+		stack.push(12);
+		try
+		{
+			assertEquals(new Integer(12),(Integer)stack.pop());	
+			assertEquals(true,stack.isEmpty());
+		}
+		catch(Exception exception)
+		{
+			exception.getMessage();
+		}
+		
+		
+	}
+	public void  testPeek()
+	{
+		Stack<Integer> stack = new Stack<Integer>();
+		try
+		{
+		stack.push(12);
+		Integer item = (Integer)stack.peek();
+		}
+		catch(Exception exception)
+		{
+			exception.getMessage();
+		}
+		
+		
+		
+	}
+	public void testSize()
+	{
+		Stack<Integer> stack = new Stack<Integer>();
+		assertEquals(stack.getSize(),new Integer(0));
+		stack.push(12);
+		assertEquals(new Integer(1),stack.getSize());
+		
+	}
+	
+	
+
 }

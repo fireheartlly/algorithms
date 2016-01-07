@@ -3,9 +3,8 @@ package com.sui.datastructures;
 import com.sui.datastructures.nodes.SinglyNode;
 
 public class SinglyList<Itemtype> {
-	SinglyNode<Itemtype> singlyNode;
-	SinglyNode<Itemtype> head;
-	SinglyNode<Itemtype> tail;
+	private SinglyNode<Itemtype> head;
+	private SinglyNode<Itemtype> tail;
 	int length = 0;
 
 	public void addInHead(SinglyNode<Itemtype> singlyNode) {
@@ -57,7 +56,6 @@ public class SinglyList<Itemtype> {
 			throw new Exception("List is empty");
 
 		}
-
 	}
 
 	public Itemtype getLast() throws Exception {
@@ -106,4 +104,33 @@ public class SinglyList<Itemtype> {
 		return tail.value;
 	}
 
+	public SinglyNode<Itemtype> getHead() {
+		return head;
+	}
+
+	public void setHead(SinglyNode<Itemtype> head) {
+		this.head = head;
+	}
+
+	public SinglyNode<Itemtype> getTail() {
+		return tail;
+	}
+
+	public void setTail(SinglyNode<Itemtype> tail) {
+		this.tail = tail;
+	}
+
+	@Override
+	public String toString() {
+		int tempcount = 0;
+		String str = "";
+		SinglyNode<Itemtype> curr = head;
+		while(tempcount<length){
+			str+=curr.value+"->";
+			curr = curr.next;
+			tempcount++;
+		}
+		str+="/";
+		return str;
+	}
 }

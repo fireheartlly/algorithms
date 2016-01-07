@@ -12,7 +12,7 @@ public class SinglyListTest extends TestCase {
 	    //singlyNode.value = 10;
 	    SinglyList<Integer> siglyList = new SinglyList<Integer>();
 		siglyList.addInHead(singlyNode);
-		assertEquals((int)siglyList.head.value, 10);
+		assertEquals((int)siglyList.getHead().value, 10);
 	}
 	
 	public void testAddNodeInHeadByValue(){
@@ -29,7 +29,7 @@ public class SinglyListTest extends TestCase {
 		//singlyNodeTail.value=10;
 		SinglyList<Integer> singlyList = new SinglyList<Integer>();
 		singlyList.addInTail(singlyNodeTail);
-		assertEquals(10,(int)singlyList.tail.value);
+		assertEquals(10,(int)singlyList.getTail().value);
 		
 	}
 	public void testAddNodeInTailByValue(){

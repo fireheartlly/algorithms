@@ -123,6 +123,16 @@ public class SinglyList<Itemtype> {
 	public void increaseLength(int len){
 		length+=len;
 	}
+	
+	public void decreaseLength(int len){
+		length-=len;
+	}
+	
+	
+	public boolean isEmpty(){
+		return head==null&&tail==null;
+	}
+	
 	@Override
 	public String toString() {
 		int tempcount = 0;
@@ -135,5 +145,21 @@ public class SinglyList<Itemtype> {
 		}
 		str+="/";
 		return str;
+	}
+	
+	/**
+	 * Method to print the list
+	 * @return
+	 */
+	public String printList(){
+		String str = String.valueOf(head.value) ;
+		SinglyNode<Itemtype> curr = head.next;
+		while (curr != null) {
+			str += "->" + curr.value;
+			curr = curr.next;
+		}
+		str += "->/";
+		return str;
+	
 	}
 }

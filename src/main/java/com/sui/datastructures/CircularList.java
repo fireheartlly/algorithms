@@ -79,7 +79,7 @@ public class CircularList<Itemtype> {
 
 	@Override
 	public String toString() {
-		String str = (String) head.value;
+		String str = String.valueOf(head.value);
 		SinglyNode<Itemtype> curr = head.next;
 		while (curr != head) {
 			str += "->" + curr.value;

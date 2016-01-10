@@ -162,4 +162,18 @@ public class SinglyList<Itemtype> {
 		return str;
 	
 	}
+	
+	public String printList(SinglyNode<Itemtype> head){
+		String str = String.valueOf(head.value) ;
+		SinglyNode<Itemtype> curr = head.next;
+		while (curr != null) {
+			str += "->" + curr.value;
+			curr = curr.next;
+		}
+		str += "->/";
+		return str;
+	
+	}
+	
+	
 }

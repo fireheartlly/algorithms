@@ -30,9 +30,8 @@ public class StackTest extends TestCase
 		{
 			exception.getMessage();
 		}
-		
-		
 	}
+	
 	public void  testPeek()
 	{
 		Stack<Integer> stack = new Stack<Integer>();

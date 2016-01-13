@@ -34,13 +34,13 @@ public class CircularListTest extends TestCase {
 	public void testAddToTail() {
 		CircularList<String> list = new CircularList<String>();
 		SinglyNode<String> node1 = new SinglyNode<String>("Node1");
-		list.addNodeToTail(node1);
+		list.addInTail(node1);
 		SinglyNode<String> node2 = new SinglyNode<String>("Node2");
-		list.addNodeToTail(node2);
+		list.addInTail(node2);
 		SinglyNode<String> node3 = new SinglyNode<String>("Node3");
-		list.addNodeToTail(node3);
+		list.addInTail(node3);
 		SinglyNode<String> node4 = new SinglyNode<String>("Node4");
-		list.addNodeToTail(node4);
+		list.addInTail(node4);
 		assertEquals(4, list.getCount());
 		// System.out.println(list);
 	}

@@ -42,17 +42,14 @@ public class NodeTest extends TestCase{
 
 	public void testTreeNode()
 	{
-		TreeNode treeNodeCenter= new TreeNode();
-		treeNodeCenter.value=12;
-		TreeNode leftNode = new TreeNode();
-		leftNode.value=13;
-		TreeNode rightNode = new TreeNode();
-		rightNode.value=16;
-		treeNodeCenter.left=leftNode;
-		treeNodeCenter.right=rightNode;
+		TreeNode<Integer> treeNodeCenter= new TreeNode<Integer>(12);
+		TreeNode<Integer> leftNode = new TreeNode<Integer>(13);
+		TreeNode<Integer> rightNode = new TreeNode<Integer>(16);
+		treeNodeCenter.setLeft(leftNode);
+		treeNodeCenter.setRight(rightNode);
 		
-		assertEquals(13, treeNodeCenter.left.value);
-		assertEquals(16, treeNodeCenter.right.value);
+		assertEquals(13, (int)treeNodeCenter.getLeft().value);
+		assertEquals(16, (int)treeNodeCenter.getRight().value);
 	}
 	
 

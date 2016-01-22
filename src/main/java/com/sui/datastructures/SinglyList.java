@@ -2,7 +2,7 @@ package com.sui.datastructures;
 
 import com.sui.datastructures.nodes.SinglyNode;
 
-public class SinglyList<Itemtype> {
+public class SinglyList<Itemtype extends Comparable<?>> {
 	private SinglyNode<Itemtype> head;
 	private SinglyNode<Itemtype> tail;
 	int length = 0;

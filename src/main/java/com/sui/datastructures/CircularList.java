@@ -8,7 +8,7 @@ import com.sui.datastructures.nodes.SinglyNode;
  *
  * @param <Itemtype> Generic type of item
  */
-public class CircularList<Itemtype> {
+public class CircularList<Itemtype extends Comparable<?>> {
 	
 	SinglyNode<Itemtype> head = null;
 	SinglyNode<Itemtype> tail = null;

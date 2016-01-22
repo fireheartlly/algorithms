@@ -2,7 +2,7 @@ package com.sui.datastructures;
 
 import com.sui.datastructures.nodes.SinglyNode;
 
-public class Queue<ItemType> {
+public class Queue<ItemType extends Comparable<?>> {
 
 	SinglyList<ItemType> singlyList = new SinglyList<ItemType>();
 	

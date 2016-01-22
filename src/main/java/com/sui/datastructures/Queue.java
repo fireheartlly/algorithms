@@ -24,7 +24,7 @@ public class Queue<ItemType extends Comparable<?>> {
 	 */
 	public boolean isEmpty()
 	{
-		 return  singlyList.getLength()==0;
+		 return  singlyList.isEmpty();
 	}
 	
 	/**
@@ -36,8 +36,6 @@ public class Queue<ItemType extends Comparable<?>> {
 	{
 		SinglyNode<ItemType> singlyNode = new SinglyNode<ItemType>(itemType);
 		singlyList.addInTail(singlyNode);
-		
-		
 	}
 	/**
 	 * 
@@ -48,9 +46,7 @@ public class Queue<ItemType extends Comparable<?>> {
 			
 	public ItemType deQueue() throws Exception
 	{
-		
-		return singlyList.removeFirst();
-		
+		return singlyList.removeFirst();	
 	}
 	
 	

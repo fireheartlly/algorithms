@@ -5,7 +5,7 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public class TreeNode<ItemType extends Comparable<?>> extends Node<ItemType>{
+public class TreeNode<ItemType extends Comparable<?>> extends Node<ItemType> implements Comparable<ItemType>{
 	
 	//Stores pointer to left child
 	private TreeNode<ItemType> left;
@@ -33,5 +33,12 @@ public class TreeNode<ItemType extends Comparable<?>> extends Node<ItemType>{
 		this.right = right;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return this.value+" ";
+	}
+
+	public int compareTo(ItemType o) {
+		return 0;
+	}
 }

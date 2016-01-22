@@ -95,7 +95,14 @@ public class SinglyList<Itemtype extends Comparable<?>> {
 	public Itemtype removeFirst() throws Exception {
 		if (head != null) {
 			Itemtype first = head.value;
-			head = head.next;
+			if(getLength()==1){
+				head = head.next;
+				tail = tail.next;
+			}
+			else{
+				head = head.next;	
+			}
+			length--;
 			return first;
 		} else {
 			throw new Exception("List is empty");

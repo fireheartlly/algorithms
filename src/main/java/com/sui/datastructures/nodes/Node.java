@@ -5,7 +5,7 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public abstract class Node<Itemtype extends Comparable<?>> {
+public abstract class Node<Itemtype extends Comparable<?>>{
 
 	// Stores the value of the node
 	public Itemtype value;

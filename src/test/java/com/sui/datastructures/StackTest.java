@@ -10,10 +10,14 @@ public class StackTest extends TestCase
 		Stack<String> stack = new Stack<String>();
 		assertEquals(true, stack.isEmpty());
 	}
-	public void testPush()
+	public void testPush() throws Exception
 	{
 		Stack<Integer> stack = new Stack<Integer>();
 		stack.push(12);
+		stack.push(15);
+		stack.pop();
+		System.out.println(stack.peek());
+		System.out.println(stack);
 		assertEquals(false, stack.isEmpty());
 		
 	}
@@ -21,10 +25,12 @@ public class StackTest extends TestCase
 	{
 		Stack<Integer> stack = new Stack<Integer>();
 		stack.push(12);
+		stack.push(13);
 		try
 		{
+			assertEquals(new Integer(13),(Integer)stack.pop());	
 			assertEquals(new Integer(12),(Integer)stack.pop());	
-			assertEquals(true,stack.isEmpty());
+			
 		}
 		catch(Exception exception)
 		{

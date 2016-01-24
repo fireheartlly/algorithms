@@ -69,15 +69,22 @@ public class SinglyList<Itemtype> {
 
 	public Itemtype removeLast() throws Exception {
 		if (tail != null) {
-			SinglyNode<Itemtype> temp;
-			int i = 1;
-			temp = head;
-			while (i <= length - 1) {
-					temp = temp.next;
-					i++;
+			Itemtype val = null;
+			if(head==tail){
+				val = head.value;
+				head = null;
+				tail = null;
 			}
-			Itemtype val = tail.value;
-			tail = temp;
+			else{
+				SinglyNode<Itemtype> temp = head;
+				while(temp.next.next!=null){
+					temp = temp.next;
+				}
+				val = temp.next.value;
+				temp.next = null;
+				tail = temp;
+				
+			}
 			length--;
 			return val;
 		} else {

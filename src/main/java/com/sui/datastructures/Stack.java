@@ -33,8 +33,7 @@ public class Stack<ItemType> {
 	 */
 	public void push(ItemType itemType) {
 		SinglyNode<ItemType> singlyNode = new SinglyNode<ItemType>(itemType);
-		singlyList.addInHead(singlyNode);
-
+		singlyList.addInTail(singlyNode);
 	}
 	
 
@@ -67,5 +66,9 @@ public class Stack<ItemType> {
 	public Integer getSize() {
 		return singlyList.getLength();
 	}
-
+	
+	@Override
+	public String toString() {
+		return singlyList.toString();
+	}
 }

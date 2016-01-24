@@ -5,7 +5,7 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public class DoublyNode<ItemType> extends Node<ItemType> {
+public class DoublyNode<ItemType extends Comparable<?>> extends Node<ItemType> {
 
 	//Stores pointer to next node
 	public DoublyNode<ItemType> next;

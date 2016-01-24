@@ -2,7 +2,7 @@ package com.sui.datastructures;
 
 import com.sui.datastructures.nodes.SinglyNode;
 
-public class SinglyList<Itemtype> {
+public class SinglyList<Itemtype extends Comparable<?>> {
 	private SinglyNode<Itemtype> head;
 	private SinglyNode<Itemtype> tail;
 	int length = 0;
@@ -127,6 +127,19 @@ public class SinglyList<Itemtype> {
 		this.tail = tail;
 	}
 
+	public void increaseLength(int len){
+		length+=len;
+	}
+	
+	public void decreaseLength(int len){
+		length-=len;
+	}
+	
+	
+	public boolean isEmpty(){
+		return head==null&&tail==null;
+	}
+	
 	@Override
 	public String toString() {
 		int tempcount = 0;
@@ -140,4 +153,34 @@ public class SinglyList<Itemtype> {
 		str+="/";
 		return str;
 	}
+	
+	/**
+	 * Method to print the list
+	 * @return
+	 */
+	public String printList(){
+		String str = String.valueOf(head.value) ;
+		SinglyNode<Itemtype> curr = head.next;
+		while (curr != null) {
+			str += "->" + curr.value;
+			curr = curr.next;
+		}
+		str += "->/";
+		return str;
+	
+	}
+	
+	public String printList(SinglyNode<Itemtype> head){
+		String str = String.valueOf(head.value) ;
+		SinglyNode<Itemtype> curr = head.next;
+		while (curr != null) {
+			str += "->" + curr.value;
+			curr = curr.next;
+		}
+		str += "->/";
+		return str;
+	
+	}
+	
+	
 }

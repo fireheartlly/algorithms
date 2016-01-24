@@ -8,12 +8,19 @@ import com.sui.datastructures.nodes.SinglyNode;
  *
  * @param <Itemtype> Generic type of item
  */
-public class CircularList<Itemtype> {
+public class CircularList<Itemtype extends Comparable<?>> {
 	
 	SinglyNode<Itemtype> head = null;
 	SinglyNode<Itemtype> tail = null;
 	int nodeCount = 0;
 
+	/**
+	 * Method to get the head of the circular list
+	 * @return
+	 */
+	public SinglyNode<Itemtype> getHead(){
+		return head;
+	}
 	/**
 	 * Method to add the node to the head of the link list
 	 * @param item
@@ -35,7 +42,7 @@ public class CircularList<Itemtype> {
 	 * Method to add the node to the tail of the link list
 	 * @param item
 	 */
-	public void addNodeToTail(SinglyNode<Itemtype> item) {
+	public void addInTail(SinglyNode<Itemtype> item) {
 		if (isEmpty()) {
 			head = item;
 			tail = item;
@@ -46,6 +53,15 @@ public class CircularList<Itemtype> {
 			tail = item;
 		}
 		nodeCount++;
+	}
+
+	/**
+	 * Method to add the value in the tail in the last of the list
+	 * @param value
+	 */
+	public void addInTail(Itemtype value){
+		SinglyNode<Itemtype> node = new SinglyNode<Itemtype>(value);
+		addInTail(node);
 	}
 
 	/**
@@ -79,7 +95,7 @@ public class CircularList<Itemtype> {
 
 	@Override
 	public String toString() {
-		String str = (String) head.value;
+		String str = String.valueOf(head.value);
 		SinglyNode<Itemtype> curr = head.next;
 		while (curr != head) {
 			str += "->" + curr.value;
@@ -103,6 +119,18 @@ public class CircularList<Itemtype> {
 		return str;
 	}
 
+	public String printList(SinglyNode<Itemtype> head){
+		String str = String.valueOf(head.value) ;
+		SinglyNode<Itemtype> curr = head.next;
+		while (curr != head) {
+			str += "->" + curr.value;
+			curr = curr.next;
+		}
+		str += "->/";
+		return str;
+	
+	}
+	
 	/**
 	 * Method to get the length of the list
 	 * @return

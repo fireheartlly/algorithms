@@ -8,7 +8,7 @@ import com.sui.datastructures.nodes.DoublyNode;
  * @author Chunxia sui
  *
  */
-public class DoublyLinkList<ItemType> {
+public class DoublyLinkList<ItemType extends Comparable<?>> {
 	private DoublyNode<ItemType> head = null;
 	private DoublyNode<ItemType> tail = null;
 	private int length = 0;

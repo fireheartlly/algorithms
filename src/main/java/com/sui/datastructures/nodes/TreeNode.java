@@ -5,11 +5,33 @@ package com.sui.datastructures.nodes;
  * @author heary
  *
  */
-public class TreeNode<ItemType> extends Node<ItemType>{
+public class TreeNode<ItemType extends Comparable<?>> extends Node<ItemType>{
 	
 	//Stores pointer to left child
-	TreeNode<ItemType> left;
+	private TreeNode<ItemType> left;
 	
 	//Stores pointer to right child
 	TreeNode<ItemType> right;
+	
+	public TreeNode(ItemType val) {
+		this.value = val;
+	}
+
+	public TreeNode<ItemType> getLeft() {
+		return left;
+	}
+
+	public void setLeft(TreeNode<ItemType> left) {
+		this.left = left;
+	}
+
+	public TreeNode<ItemType> getRight() {
+		return right;
+	}
+
+	public void setRight(TreeNode<ItemType> right) {
+		this.right = right;
+	}
+	
+	
 }

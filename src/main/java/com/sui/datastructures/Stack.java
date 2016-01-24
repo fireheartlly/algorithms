@@ -9,7 +9,7 @@ import com.sui.datastructures.nodes.SinglyNode;
  *         stack data structure used to add the element at the top and pop the
  *         recently added data
  */
-public class Stack<ItemType> {
+public class Stack<ItemType extends Comparable<?>> {
 
 	/**
 	 * SinglyList data structure is used here to add and delete the data in the

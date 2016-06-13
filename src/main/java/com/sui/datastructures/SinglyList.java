@@ -189,5 +189,13 @@ public class SinglyList<Itemtype extends Comparable<?>> {
 	
 	}
 	
+	public Itemtype[] toArray(){
+		//Itemtype[] arr = new Itemtype[length];
+		Object[] arr = new Object[5];
+		
+		
+		return null;
+	}
+	
 	
 }
